@@ -222,7 +222,7 @@ print(f"He aprobado sacando un 4, 5 y 6 en los examenes?: {passed(4, 5, 6)}")
 
 ## Ejercicio 21:
 def student_passed(name, surnames, grade1, grade2, grade3):
-    nombre = format_name("Chaves Dominguez", "Daniel")
-    aprobado = passed(3, 5, 4.5)
+    nombre = format_name(surnames, name)
+    aprobado = passed(grade1, grade2, grade3)
     print(f"{nombre} ha aprobado las asignaturas con un 3, 5 y 4.5?: {aprobado}")
 student_passed("Daniel ", " Chaves Dominguez", 3, 4, 4.5)
