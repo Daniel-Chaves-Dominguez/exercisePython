@@ -259,33 +259,231 @@
 
 
 # # BUCLES
+# # Usando while:
+# ## Ejercicio 1:
+# i = 1
+# while i <= 10:
+#     print(i)
+#     i += 1
+
+
+# ## Ejercicio 2:
+# i = 10
+# while i >= 1:
+#     print(i)
+#     i -= 1
+
+
+# ## Ejercicio 3:
+# i = 1
+# suma = 0
+# while i <= 10:
+#     suma += i
+#     i += 1
+# print(f"La suma de los números del 1 al 10 es: {suma}")
+
+
+# ## Ejercicio 4:
+# i = 1
+# while i <= 20:
+#     print(i)
+#     i += 2
+
+
+# ## Ejercicio 5:
+# factorial = 1
+# i = 8
+# while i >= 1:
+#     factorial = factorial * i
+#     i -= 1
+# print(f"El factorial de 8 es: {factorial}")
+
+
+# ## Ejercicio 6:
+# import random
+# aleatorio = random.randint(1, 10)
+# intento = int(input("Adivina el número (1-10): "))
+# while intento != aleatorio:
+#     print("Fallaste, prueba otra vez")
+#     intento = int(input("Adivina el número (1-10): "))
+# print("¡Acertaste!")
+
+
+# ## Ejercicio 7:
+# i = 1
+# while i <= 50:
+#     if i % 3 == 0:
+#         print(i)
+#     i += 1
+
+
+# ## Ejercicio 8:
+# usuario_ok = "admin"
+# clave_ok = "1234"
+# usuario = input("Usuario: ")
+# clave = input("Contraseña: ")
+# while usuario != usuario_ok or clave != clave_ok:
+#     print("Usuario o contraseña incorrectos")
+#     usuario = input("Usuario: ")
+#     clave = input("Contraseña: ")
+# print("Bienvenido")
+
+
+# ## Ejercicio 9:
+# usuario_ok = "admin"
+# clave_ok = "1234"
+# intentos = 1
+# usuario = input("Usuario: ")
+# clave = input("Contraseña: ")
+# while (usuario != usuario_ok or clave != clave_ok) and intentos < 3:
+#     print("Usuario o contraseña incorrectos")
+#     usuario = input("Usuario: ")
+#     clave = input("Contraseña: ")
+#     intentos += 1
+# if usuario == usuario_ok and clave == clave_ok:
+#     print("Bienvenido")
+# else:
+#     print("Demasiados intentos")
+
+
+# # Usando for:
+# ## Ejercicio 1:
+# for i in range(1, 11):
+#     print(i)
+
+
+# ## Ejercicio 2:
+# for i in range(10, 0, -1):
+#     print(i)
+
+
+# ## Ejercicio 3:
+# suma = 0
+# for i in range(1, 11):
+#     suma += i
+# print(f"La suma de los números del 1 al 10 es: {suma}")
+
+
+# ## Ejercicio 4:
+# for i in range(1, 21, 2):
+#     print(i)
+
+
+# ## Ejercicio 5:
+# factorial = 1
+# for i in range(1, 10):
+#     factorial = factorial * i
+# print(f"El factorial de 9 es: {factorial}")
+
+
+# ## Ejercicio 6:
+# for i in range(1, 11):
+#     print(f"7 x {i} = {7 * i}")
+
+
+# ## Ejercicio 7:
+# for i in range(2, 51, 2):
+#     print(i)
+
+
+# ## Ejercicio 8:
+# import random
+# for tirada in range(6):
+#     print(f"Tirada {tirada + 1}: {random.randint(1, 6)}")
+
+
+# # Usando for con colecciones:
 ## Ejercicio 1:
-i = 1
-while i <= 10:
-    print(i)
-    i += 1
+textos = ["uno", "dos", "tres", "cuatro", "cinco"]
+for texto in textos:
+    print(texto)
 
 
 ## Ejercicio 2:
-i = 10
-while i >= 1:
-    print(i)
-    i -= 1
+numeros = [3, 5, 8, 2, 7]
+suma = 0
+for n in numeros:
+    suma += n
+print(f"La suma es: {suma}")
 
 
 ## Ejercicio 3:
-i = 1
+decimales = [2.5, 3.75, 6.0, 8.25, 9.5]
 suma = 0
-while i <= 10:
-    suma += i
-    i += 1
-print(f"La suma de los números del 1 al 10 es: {suma}")
+for n in decimales:
+    suma += n
+print(f"La media es: {suma / len(decimales)}")
 
 
 ## Ejercicio 4:
-factorial = 1
-i = 8 
-while i >= 1:
-    factorial = factorial * i
-    i -= 1
-print(f"El factorial de 8 es: {factorial}")
+numeros = [4, 7, 10, 13, 22]
+pares = 0
+impares = 0
+for n in numeros:
+    if n % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+print(f"Pares: {pares}, impares: {impares}")
+
+
+## Ejercicio 5:
+nombres = ["Ana", "Luis", "Marta", "Pedro", "Lucía"]
+buscado = input("Escribe un nombre: ")
+encontrado = False
+for nombre in nombres:
+    if nombre == buscado:
+        encontrado = True
+print(f"El nombre {buscado} está en la lista: {encontrado}")
+
+
+## Ejercicio 6:
+textos = ["uno", "dos", "tres", "cuatro", "cinco"]
+for i in range(len(textos)):
+    print(f"Cadena {i}: {textos[i]}")
+
+
+## Ejercicio 7:
+palabras = {"sol", "luna", "estrella", "mar", "cielo"}
+mas_larga = ""
+for palabra in palabras:
+    if len(palabra) > len(mas_larga):
+        mas_larga = palabra
+print(f"La palabra más larga es: {mas_larga}")
+
+
+## Ejercicio 8:
+notas = {"Ana": 7, "Luis": 4, "Marta": 9, "Pedro": 5, "Lucía": 6}
+mejor = ""
+peor = ""
+mejor_nota = 0
+peor_nota = 10
+suma = 0
+for nombre in notas:
+    nota = notas[nombre]
+    suma += nota
+    if nota > mejor_nota:
+        mejor_nota = nota
+        mejor = nombre
+    if nota < peor_nota:
+        peor_nota = nota
+        peor = nombre
+print(f"Nota más alta: {mejor} ({mejor_nota})")
+print(f"Nota más baja: {peor} ({peor_nota})")
+print(f"Nota media: {suma / len(notas)}")
+
+
+## Ejercicio 9:
+productos = {"pan": 1.0, "leche": 1.2, "huevos": 2.5, "arroz": 1.8, "aceite": 6.0}
+for producto in productos:
+    print(f"{producto}: {productos[producto] * 1.21} euros")
+
+
+## Ejercicio 10:
+personas = {"Ana": 2000, "Luis": 2012, "Marta": 1985, "Pedro": 2010, "Lucía": 2003}
+mayores = []
+for nombre in personas:
+    edad = 2026 - personas[nombre]
+    if edad >= 18:
+        mayores.append(nombre)
+print(f"Hay {len(mayores)} mayores de edad: {mayores}")
